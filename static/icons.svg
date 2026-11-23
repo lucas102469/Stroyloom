@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="feather" viewBox="0 0 32 32"><path d="M5 28 24 8M9 22C6 11 17 3 29 3c-1 12-8 23-19 22M12 19l10-2M16 15l8-1M19 12l7-1M12 19l1-9M16 15l1-8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="book" viewBox="0 0 24 24"><path d="M12 5C8 2 3 3 3 3v16s5-1 9 2c4-3 9-2 9-2V3s-5-1-9 2Zm0 0v16"/></symbol>
+<symbol id="file" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8Zm0 0v5h5M8 12h8M8 16h8"/></symbol>
+<symbol id="layers" viewBox="0 0 24 24"><path d="m12 3 10 5-10 5L2 8Zm-10 9 10 5 10-5M2 16l10 5 10-5"/></symbol>
+<symbol id="pen" viewBox="0 0 24 24"><path d="m15 4 5 5M3 21l5-1L21 7a2 2 0 0 0-5-5L3 15Z"/></symbol>
+<symbol id="clock" viewBox="0 0 24 24"><path d="M4 6v5h5M4 11a9 9 0 1 1 1 7M12 7v5l3 2"/></symbol>
+<symbol id="chat" viewBox="0 0 24 24"><path d="M21 11a9 8 0 0 1-9 8H5l-4 3 2-7a8 8 0 0 1-1-4 9 8 0 0 1 19 0Z"/><path d="M7 11h.01M12 11h.01M17 11h.01" stroke-width="2.5"/></symbol>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+<symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L20 5"/></symbol>
+<symbol id="user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3"/></symbol>
+<symbol id="mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 5 9 8 9-8"/></symbol>
+<symbol id="lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4M12 15v3"/></symbol>
+<symbol id="send" viewBox="0 0 24 24"><path d="m3 3 18 9-18 9 4-9Zm4 9h14"/></symbol>
+<symbol id="plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+<symbol id="home" viewBox="0 0 24 24"><path d="m2 11 10-8 10 8M5 9v12h14V9M9 21v-7h6v7"/></symbol>
+<symbol id="search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="7"/><path d="m15 15 7 7"/></symbol>
+<symbol id="download" viewBox="0 0 24 24"><path d="M12 2v14m-5-5 5 5 5-5M3 16v6h18v-6"/></symbol>
+<symbol id="grid" viewBox="0 0 24 24"><path d="M3 3h7v7H3Zm11 0h7v7h-7ZM3 14h7v7H3Zm11 0h7v7h-7Z"/></symbol>
+<symbol id="list" viewBox="0 0 24 24"><path d="M8 5h14M8 12h14M8 19h14M2 5h1M2 12h1M2 19h1"/></symbol>
+<symbol id="close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></symbol>
+<symbol id="chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="spark" viewBox="0 0 24 24"><path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/></symbol>
+</defs><symbol id="eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/><path d="m3 21 18-18"/></symbol><symbol id="folder" viewBox="0 0 24 24"><path d="M3 6h7l2 2h9v11H3Z"/><path d="M3 6V4h7l2 2h7v2"/></symbol></svg>

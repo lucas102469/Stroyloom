@@ -1,0 +1,111 @@
+/* Public work detail: title and author share a row; status follows the chapters. */
+.discover-work-view .discover-work-heading {
+  align-items: start;
+  margin: 8px 0 52px;
+}
+.discover-work-view .discover-work-heading > div:last-child { min-width: 0; }
+.discover-work-view .discover-work-title-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+.discover-work-view .discover-work-heading h1 {
+  min-width: 0;
+  margin: 0;
+  font: 600 32px/1.4 var(--sans);
+  letter-spacing: -.025em;
+  word-break: keep-all;
+}
+.discover-work-view .discover-work-meta {
+  margin: 0;
+  font: 400 15px/1.5 var(--sans);
+  white-space: nowrap;
+  overflow-wrap: anywhere;
+}
+.discover-work-view .discover-synopsis {
+  max-width: 530px;
+  margin: 18px 0 20px;
+  font: 400 19px/1.75 var(--sans);
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.discover-work-view .discover-work-actions > .primary { min-width: 176px; }
+.discover-work-view .discover-detail-tabs {
+  border-top: 0;
+  padding-top: 0;
+}
+.discover-work-view .discover-detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  padding: 6px 0 10px;
+}
+.discover-work-view .discover-detail-actions:empty { display: none; }
+.discover-work-view .discover-detail-tabs .alternative-create {
+  border: 0;
+  border-radius: 0;
+  padding: 7px 0;
+  font: 400 14px/1.4 var(--sans);
+  color: var(--green-dark);
+  background: transparent;
+}
+.discover-work-view .discover-detail-tabs .alternative-create:hover {
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.discover-work-view .discover-work-heading .alternative-controls { margin: -8px 0 16px; }
+.discover-work-view .alternative-row {
+  grid-template-columns: 90px minmax(0, 1fr) auto;
+  gap: 24px;
+  padding: 24px 12px;
+}
+.discover-work-view .alternative-mini-cover {
+  width: 90px;
+  height: 120px;
+  padding: 12px 10px;
+  font-size: 13px;
+}
+.discover-work-view .alternative-mini-cover::after { inset: 6px; }
+.discover-work-view .alternative-row-info { min-width: 0; }
+.discover-work-view .alternative-row-info h3 {
+  margin-bottom: 10px;
+  font-size: 21px;
+  overflow-wrap: anywhere;
+}
+.discover-work-view .alternative-row-info p { margin-bottom: 10px; font-size: 15px; }
+.discover-work-view .alternative-row-stats { font-size: 15px; }
+.discover-work-view .alternative-row-stats .icon { width: 18px; height: 18px; }
+.discover-work-view .alternative-read {
+  min-width: 96px;
+  min-height: 42px;
+  padding: 9px 16px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+@media (max-width: 900px) {
+  .discover-work-view .discover-work-heading h1 { font-size: 27px; }
+  .discover-work-view .discover-work-title-row { gap: 16px; }
+}
+@media (max-width: 600px) {
+  .discover-work-view .alternative-row {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 16px;
+    padding: 20px 0;
+  }
+  .discover-work-view .alternative-mini-cover { width: 76px; height: 102px; font-size: 12px; }
+  .discover-work-view .alternative-row-info h3 { font-size: 18px; }
+  .discover-work-view .alternative-read { grid-column: 2; justify-self: start; }
+  .discover-work-view .discover-work-heading { grid-template-columns: 1fr; gap: 22px; margin-bottom: 30px; }
+  .discover-work-view .discover-work-cover { width: 128px; }
+  .discover-work-view .discover-work-cover .discover-text-cover { height: 171px; }
+  .discover-work-view .discover-work-heading h1 { font-size: 24px; }
+  .discover-work-view .discover-work-title-row { grid-template-columns: minmax(0, 1fr); gap: 10px; margin-bottom: 18px; }
+  .discover-work-view .discover-work-meta { font-size: 14px; }
+  .discover-work-view .discover-synopsis { font-size: 16px; }
+  .discover-work-view .discover-detail-tabs { gap: 2px; }
+  .discover-work-view .discover-detail-tabs button { font-size: 14px; padding-inline: 6px; }
+}

@@ -1,0 +1,22 @@
+# Private configuration and runtime data
+.env
+.env.*
+!.env.example
+*.session-key
+*.sqlite3
+*.sqlite3-*
+*.sqlite
+*.db
+backups/
+output/
+tmp*/
+# Local development
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

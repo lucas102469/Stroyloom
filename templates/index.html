@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Storyloom 작업실</title>
+<style>
+*{box-sizing:border-box}body{font:15px system-ui;margin:0;color:#222;background:#fafafa}header{padding:14px;border-bottom:1px solid #ccc;display:flex;gap:10px;align-items:center;flex-wrap:wrap}button,select,input,textarea{font:inherit;padding:8px;border:1px solid #aaa;border-radius:3px;background:white}button{cursor:pointer}button:disabled{opacity:.5;cursor:wait}main{display:grid;grid-template-columns:1fr 1fr;height:calc(100vh - 140px)}section{padding:16px;min-width:0;overflow:auto}section+section{border-left:1px solid #ccc}#messages{height:calc(100% - 150px);overflow:auto;min-height:200px}.message{white-space:pre-wrap;padding:12px 0;border-bottom:1px solid #ddd}textarea{width:100%;resize:vertical}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;line-height:1.8}#notice{padding:10px;white-space:pre-wrap;color:#704100}nav{display:flex;gap:5px;flex-wrap:wrap}small{color:#555}details{margin-top:15px}#episode{width:85px}h2{font-size:17px}@media(max-width:760px){main{display:block;height:auto}section{height:650px}section+section{border-left:0;border-top:1px solid #ccc}}
+</style>
+<header><strong>Storyloom 임시 작업실</strong><select id="library" aria-label="작품 선택"></select><button id="new">새 작품</button><span id="saved">자동저장 · 확정은 승인 후</span></header>
+<div id="notice" role="status">불러오는 중…</div>
+<main><section><h2>AI와 집필 대화</h2><div id="messages"></div><form id="chat"><textarea id="input" rows="3" placeholder="아이디어, 목표 글자수·총 회차수, 집필·수정 요청을 편하게 적어주세요." required></textarea><button id="send">보내기</button><button type="button" id="retry" hidden>실패한 요청 재시도</button><button type="button" id="cancel" hidden>생성 취소</button></form><small>응답은 완료 후 표시됩니다. 생성 취소는 결과 반영을 중단합니다.</small></section>
+<section><nav id="tabs"></nav><p><label>회차 <input id="episode" type="number" min="1" max="10000" value="1"></label><button id="refresh">다시 불러오기</button></p><div id="preview"></div><details><summary>버전 이력 · 복원은 새 초안으로 저장</summary><div id="history"></div></details></section></main>
+<script src="/static/app.js"></script></html>
