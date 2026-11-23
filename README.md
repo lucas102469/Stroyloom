@@ -67,3 +67,36 @@ DB에는 계정·작품·원고 등이 저장되고 세션 키는 로그인 상�
 이 폴더의 코드와 문서만 업로드하세요. `.gitignore`와 `.env.example`도 포함하세요.
 `.env`, API 키, DB, 세션 키, 작품 백업은 업로드하지 마세요.
 이 폴더는 업로드 준비본이며 Git 초기화·커밋·원격 저장소 연결·업로드는 수행하지 않았습니다.
+
+
+## Render 무료 배포 — 접속 설정과 데이터 주의사항
+
+- Build Command: `pip install -r requirements.txt`
+- Start Command: `gunicorn wsgi:app --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 240`
+- 환경변수 `GEMINI_API_KEY`에 본인의 키를 비공개로 등록하세요. 키를 GitHub에 올리지 마세요.
+- Render가 자동 지정하는 `RENDER_EXTERNAL_HOSTNAME`의 도메인만 기존 localhost/127.0.0.1에 추가 허용됩니다. 다른 도메인을 포괄 허용하지 않습니다.
+- Render에서는 HTTPS로 접속하세요. 세션 쿠키에 Secure를 적용하며 기존 HttpOnly·SameSite=Strict 설정과 API 인증·POST 검사를 유지합니다.
+- 별도 사용자 지정 도메인은 이번 허용 범위에 포함하지 않습니다.
+- 기본 WSGI 진입점은 `wsgi:app`입니다. `app:app`은 이 프로젝트의 모듈 구조와 맞지 않습니다.
+- 백그라운드 작업이 있으므로 프로세스 자동 증설이나 여러 Gunicorn worker를 임의로 사용하지 마세요. 위 명령은 1 worker를 명시합니다.
+
+### 중요: 무료 Render의 SQLite는 영구 저장소가 아닙니다
+
+Render 무료 웹 서비스는 휴면·재시작·재배포 시 로컬 파일 변경분을 잃을 수 있습니다.
+현재 SQLite DB(계정·작품)와 세션 키도 해당됩니다. 접속 오류 수정은 이 저장 문제를 해결하지 않습니다.
+지속적인 데이터 보존이 필요한 서비스로 안내하지 말고, 데모 자료는 외부에 백업하세요.
+장기 저장은 별도 무료 저장소 검토와 DB 변경 설계가 필요하며 이번 접속 수정에는 포함하지 않았습니다.
+무료 Render Postgres도 생성 후 30일 만료 제한이 있으므로 영구 보존 대안이라고 간주하지 마세요.
+
+또한 회원가입은 공개되어 있고 현재 앱 자체 AI 호출 한도는 없습니다. 로그인한 사용자만 생성할 수 있지만,
+불특정 사용자의 가입·호출로 Gemini 무료 쿼터가 소진될 수 있습니다. 가입/호출 제한은 별도 검토 사항입니다.
+
+참고: https://render.com/docs/free · https://render.com/docs/environment-variables
+
+### 접속·인증 회귀 테스트
+
+실제 API를 호출하지 않고 임시 DB로 검사합니다.
+
+```powershell
+python -B -m unittest discover -s tests -p test_render_access.py -v
+```

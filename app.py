@@ -74,7 +74,12 @@ def create_app(database=None, ai=None, auth_required=None):
         app.secret_key = secret_path.read_text(encoding='ascii')
     else:
         app.secret_key = secrets.token_hex(32)
-    app.config.update(SESSION_COOKIE_HTTPONLY=True, SESSION_COOKIE_SAMESITE='Strict')
+    render_hostname = os.environ.get('RENDER_EXTERNAL_HOSTNAME', '').strip().lower()
+    allowed_hosts = {'127.0.0.1', 'localhost'}
+    if render_hostname:
+        allowed_hosts.add(render_hostname)
+    app.config.update(SESSION_COOKIE_HTTPONLY=True, SESSION_COOKIE_SAMESITE='Strict',
+                      SESSION_COOKIE_SECURE=bool(render_hostname))
     workers = ThreadPoolExecutor(max_workers=2, thread_name_prefix='storyloom')
     active_episode_batches = set()
     active_home_summaries = set()
@@ -100,7 +105,7 @@ def create_app(database=None, ai=None, auth_required=None):
         # Version history can make a valid exported backup larger than an edit request.
         if request.path == '/api/projects/import':
             request.max_content_length = 32 * 1024 * 1024
-        if request.host.split(':')[0] not in ('127.0.0.1', 'localhost'):
+        if request.host.split(':')[0].lower() not in allowed_hosts:
             return jsonify(error='로컬 주소로 접속하세요.'), 403
         if request.method == 'POST':
             origin = request.headers.get('Origin')
